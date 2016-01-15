@@ -57,10 +57,19 @@ public class PhotoChooserController {
 	@FXML
 	public void searchPhotoButtonAction(ActionEvent event) throws MalformedURLException {
 		FileChooser fileChooser = new FileChooser();
+		/*
+		 * REV: tekst powinien byc pobrany z bundle
+		 */
 		fileChooser.setTitle("Select image files");
+		/*
+		 * REV: ten katalog istnieje tylko na twoim komputerze
+		 */
 		fileChooser.setInitialDirectory(new File("C:/Users/wzietek/Pictures"));
 		fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter(
 				"Image Files *.bmp, *.png, *.jpg, *.gif, *.bmp", "*.png", "*.jpg", "*.gif"));
+		/*
+		 * REV: okno mozna pobrac kontrolki
+		 */
 		List<File> selectedFiles = fileChooser.showOpenMultipleDialog(mainApp.getPrimaryStage());
 
 		if (selectedFiles != null) {
@@ -86,12 +95,18 @@ public class PhotoChooserController {
 			photosStage.setTitle("Photo Viewer");
 			photosStage.setScene(scene);
 			photosStage.initModality(Modality.WINDOW_MODAL);
+			/*
+			 * REV: okno mozna pobrac kontrolki
+			 */
 			photosStage.initOwner(mainApp.getPrimaryStage());
 
 			PhotoViewerController photoViewerCtrl = loader.getController();
 			photoViewerCtrl.setModelWithSelectedFileId(model, idFileToShow);
 			photosStage.show();
 		} catch (IOException e) {
+			/*
+			 * REV: obsluga wyjatkow
+			 */
 			e.printStackTrace();
 		}
 	}

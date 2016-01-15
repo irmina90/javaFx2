@@ -59,6 +59,9 @@ public class PhotoViewerController {
 		try {
 			setImage(model.getFileById(idFile));
 		} catch (MalformedURLException e) {
+			/*
+			 * REV: obsluga wyjatkow
+			 */
 			e.printStackTrace();
 		}
 	}
@@ -95,6 +98,9 @@ public class PhotoViewerController {
 						setImage(model.getFileById(idFile));
 						incrementFildId();
 					} catch (MalformedURLException e) {
+						/*
+						 * REV: j.w.
+						 */
 						e.printStackTrace();
 					}
 				} else {
@@ -147,6 +153,9 @@ public class PhotoViewerController {
 
 	@FXML
 	public void zoomOutAction(ActionEvent event) {
+		/*
+		 * REV: tutaj cos sie nie zgadza
+		 */
 		image.setFitWidth(scrollPane.getWidth());
 		image.setFitHeight(scrollPane.getHeight());
 	}

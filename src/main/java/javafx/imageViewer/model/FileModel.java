@@ -19,7 +19,9 @@ public class FileModel {
 	{
 
 	}
-
+	/*
+	 * REV: metoda powinna nazywac sie 'fileProperty'
+	 */
 	public final ObjectProperty<File> getProperty() {
 		return file;
 	}
@@ -44,6 +46,9 @@ public class FileModel {
 		return files;
 	}
 
+	/*
+	 * REV: chodzi raczej o index a nie id
+	 */
 	public File getFileById(int id) {
 		return files.get(id);
 	}
