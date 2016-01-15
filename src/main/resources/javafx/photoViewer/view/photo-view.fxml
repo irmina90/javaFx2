@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?scenebuilder-preview-i18n-resource ../bundle/base.properties?>
+<?scenebuilder-stylesheet ../css/standard.css?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ScrollPane?>
+
+<AnchorPane prefHeight="593.0" prefWidth="872.0" xmlns="http://javafx.com/javafx/8.0.51" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.imageViewer.controller.PhotoViewerController">
+  <ScrollPane fx:id="scrollPane" prefHeight="546.0" prefWidth="872.0">
+    <ImageView fx:id="image" pickOnBounds="true" preserveRatio="true" />
+  </ScrollPane>
+  <ToolBar layoutX="176.0" layoutY="546.0" prefHeight="45.0" prefWidth="520.0">
+    <items>
+      <Button fx:id="prevButton" defaultButton="true" mnemonicParsing="false" onAction="#prevPhotoAction" text="%button.prev" />
+      <Button fx:id="slideShowButton" defaultButton="true" mnemonicParsing="false" onAction="#slideShowAction" prefHeight="31.0" prefWidth="157.0" text="%button.slideShow" />
+      <Button fx:id="nextButton" defaultButton="true" mnemonicParsing="false" onAction="#nextPhotoAction" text="%button.next" />
+         <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="0.0" />
+         <Button fx:id="zoomInButton" mnemonicParsing="false" onAction="#zoomInAction" text="Zoom in +" />
+         <Button fx:id="zoomOutButton" mnemonicParsing="false" onAction="#zoomOutAction" text="Zoom out -" />
+    </items>
+  </ToolBar>
+</AnchorPane>
